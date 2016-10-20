@@ -1,22 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script type="text/javascript" src="assets/javascript/game.js"></script>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	
-	<meta charset="UTF-8">
-	<title>SUPER AWSOME HANGMAN GAME</title>
-	
+    <meta charset="UTF-8">
+    <title>Hangman</title>
+
+    
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+
+
 </head>
 <body>
-	<h2>SUPER AWESOME HANGMAN GAME</h2>
-	<form>
-	<input type="text" maxlength="1" minlength="1" name="letter" id="letter" placeholder="Guess a letter">
-	<button id="guess" name="guess" type="button">Guess</button>
-	<button id="restart" name="restart" type="button">Reset</button>
-	</form>
-<ul id="letters"></ul>
-<p id="man"></p>
-<p id="output" class="output"></p>
+<h1>SUPER AWESOME HANGMAN GAME</h1>
+    <form class="hangmanform">
+    <!-- BUTTONS  -->
+    
+    <input type="text" maxlength="1" minlength="1" name="letter" id="letter" placeholder="Guess a letter">
+
+    <button id="guessbutton" name="guessbutton" type="button">Guess</button>
+    
+    <button id="restart" name="restart" type="button">Reset</button>
+    </form>
+
+    <!-- END OF BUTTONS -->
+
+<h3 id="guessesLeft" class="format">Chances Available:     <span></span></h1>
+<h3 id="correctGuesses" class="format">Correct:   <span></span></h3>
+<h3 id="incorrectGuesses" class="format">Incorrect Guesses:       <span></span></h3>
+<h4 id="hangmanWord" class="format"> <span></span></h4>
+
+ 
+<script type="text/javascript"> //src="assets/javascript/game.js">
+
+$(document).ready(function(){
+
+    var wordbank = ['Cubs','Bluejays','Dodgers','Indians', 'Yankees','RedSox','Padres','Giants','Mets','Athletics']
+
+    var messagesmain = {
+        win : 'You Won!, Congratulations',
+        loss : ['You Lost! Try Again'],
+        guesses : ['You guessed that aleady, try another letter'],
+        validletter : ['Please enter a valid letter'],
+    }
+
+        // VARIABLES
+        var guessesRemaining = 5
+        var correctGuessCount = 0
+        var inCorrectGuessCount = 0
+        var availableletters = "abcdefghijklmnopqrstuvwxyz"
+        var randomWord = wordbank[Math.floor(Math.random() * wordbank.length)];
+        var randomWordLength = (randomWord.length);
+    
+        console.log(wordbank);
+        console.log(randomWord);
+        console.log(randomWord.length);
+        
+
+
+
+    $("form :input").change(function(){
+        console.log($(this).closest('form').serialize());
+    });
+
+
+
+    // FUNCTIONS
+    // ====================================================================
+    // Here we create various on "click" functions which capture the clicks
+    // Inside each click event is the code to create an alert, update the counter, then show the updated count.
+
+
+
+
+
+})
+
+
+
+</script>
+    
 </body>
 </html>
