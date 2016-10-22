@@ -58,7 +58,7 @@ document.onkeyup  = function(event){
 			}
 		} 
 			// 
-		if (workingAnswer.includes("_") === false){
+		if (workingAnswer.includes("_ ") === false){
 			document.querySelector("#hash-blanks").innerHTML = teamName;
 			attempts = 0;
 			wins = wins + 1;
