@@ -82,7 +82,7 @@ document.onkeyup  = function(event){
 
 		//Display answer as hash lines
 		for (var i =0; i < teamName.length; i++){
-			workingAnswer[i] = "_";
+			workingAnswer[i] = "_ ";
 		}
 
 		//display the letters guess
