@@ -68,8 +68,6 @@ document.onkeyup  = function(event){
 		}
 	}
 
-
-
 	function startGame(){
 		workingAnswer = new Array();
 
