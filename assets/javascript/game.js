@@ -1,8 +1,9 @@
-var wordBank = ["Cubs","Athletics","Buejays","Whitesox","Mariners","Mets","Yankees","Padres","Giants"];
+var wordBank = ["cubs","pirates","dodgers","whitesox","bluejays","giants","mets","redsox","marlins","rangers","yankees"];
+
 
 var wins = 0;
 var attempts = 0;
-var maxAttempts = 7;
+var maxAttempts = 10;
 var attemptsLeft;
 var lettersGuessed = "";
 var teamName;
@@ -50,12 +51,13 @@ document.onkeyup  = function(event){
 				"	workingAnswer: " + workingAnswer[i]
 				);
 
+				// A CORRECT GUESS
 			if (userInput === teamName.charAt(i)){
 				workingAnswer[i] = userInput;
 				document.querySelector("#hash-blanks").innerHTML = workingAnswer.join('');
 			}
 		} 
-		
+			// 
 		if (workingAnswer.includes("_") === false){
 			document.querySelector("#hash-blanks").innerHTML = teamName;
 			attempts = 0;
@@ -72,7 +74,7 @@ document.onkeyup  = function(event){
 		workingAnswer = new Array();
 
 		// pick  a team name
-		teamName = wordBank[Math.floor(Math.random() * wordBank.Length)];
+		teamName = wordBank[Math.floor(Math.random() * wordBank.length)];
 		console.log(teamName);
 
 		// show how many times you won
